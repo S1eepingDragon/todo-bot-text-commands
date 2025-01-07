@@ -1,0 +1,14 @@
+services:
+  todo-app:
+    build: .
+    container_name: todo-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - todo_data:/app/data
+    environment:
+      - ENVIRONMENT=development
+    restart: always
+
+volumes:
+  todo_data:
